@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rCt-ZL-9b8">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="UTG-Pj-sF6">
+            <objects>
+                <navigationController id="rCt-ZL-9b8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dyp-Hh-uaq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1Qt-70-43b" kind="relationship" relationship="rootViewController" id="GX8-BA-eX2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aF9-Rh-duw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-661" y="41"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="dtx-E8-d3P">
+            <objects>
+                <viewController id="1Qt-70-43b" customClass="SearchViewController" customModule="gitHubSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vHu-QK-jmX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="myh-p4-E4V">
+                                <rect key="frame" x="132" y="104" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="myh-p4-E4V" secondAttribute="height" multiplier="1:1" id="cIb-ie-fEM"/>
+                                    <constraint firstAttribute="height" constant="150" id="hGp-Fp-CYE"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZFK-d6-WCR">
+                                <rect key="frame" x="80" y="406" width="254" height="29"/>
+                                <segments>
+                                    <segment title="Descending"/>
+                                    <segment title="Ascending"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mj-gx-XDy">
+                                <rect key="frame" x="181" y="464" width="52" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="1Qt-70-43b" eventType="touchUpInside" id="Hcn-Fy-dPh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of a repository" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRi-zW-RMP">
+                                <rect key="frame" x="16" y="315" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by stars of a repository" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2b-7P-Pet">
+                                <rect key="frame" x="101" y="369" width="212.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Searching of repositories in the GitHub" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7R4-E3-mhK">
+                                <rect key="frame" x="56.5" y="270" width="301" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="myh-p4-E4V" firstAttribute="top" secondItem="8Ul-bF-ehx" secondAttribute="top" constant="16" id="2JL-Tk-iQa"/>
+                            <constraint firstItem="ZFK-d6-WCR" firstAttribute="top" secondItem="O2b-7P-Pet" secondAttribute="bottom" constant="16" id="5vm-VN-r03"/>
+                            <constraint firstItem="O2b-7P-Pet" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="EmQ-zF-mbr"/>
+                            <constraint firstItem="sRi-zW-RMP" firstAttribute="leading" secondItem="8Ul-bF-ehx" secondAttribute="leading" constant="16" id="Lhj-lL-7qx"/>
+                            <constraint firstItem="O2b-7P-Pet" firstAttribute="top" secondItem="sRi-zW-RMP" secondAttribute="bottom" constant="24" id="aQ7-dA-A3A"/>
+                            <constraint firstItem="myh-p4-E4V" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="aZR-wa-byw"/>
+                            <constraint firstItem="sRi-zW-RMP" firstAttribute="top" secondItem="7R4-E3-mhK" secondAttribute="bottom" constant="24" id="cNy-Fn-dgx"/>
+                            <constraint firstItem="7R4-E3-mhK" firstAttribute="top" secondItem="myh-p4-E4V" secondAttribute="bottom" constant="16" id="cii-lV-RH3"/>
+                            <constraint firstItem="7mj-gx-XDy" firstAttribute="top" secondItem="ZFK-d6-WCR" secondAttribute="bottom" constant="30" id="eEc-34-qfj"/>
+                            <constraint firstItem="7mj-gx-XDy" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="gl6-RV-0Ps"/>
+                            <constraint firstItem="ZFK-d6-WCR" firstAttribute="leading" secondItem="8Ul-bF-ehx" secondAttribute="leading" constant="80" id="kQN-g6-NUB"/>
+                            <constraint firstItem="ZFK-d6-WCR" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="vDz-mJ-Z9w"/>
+                            <constraint firstItem="7R4-E3-mhK" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="vej-Mt-ZRE"/>
+                            <constraint firstItem="sRi-zW-RMP" firstAttribute="centerX" secondItem="vHu-QK-jmX" secondAttribute="centerX" id="xQJ-U0-5oK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Ul-bF-ehx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hav-IZ-HoS"/>
+                    <connections>
+                        <outlet property="logoImageView" destination="myh-p4-E4V" id="pzp-qt-1rD"/>
+                        <outlet property="nameTextField" destination="sRi-zW-RMP" id="F4V-LJ-a3X"/>
+                        <outlet property="sortingSegmentedControl" destination="ZFK-d6-WCR" id="fvL-PI-mWc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVU-ZW-CRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="41"/>
+        </scene>
+    </scenes>
+</document>
